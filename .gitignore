@@ -1,5 +1,13 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+#design-pattern
 design-pattern/.idea/
 design-pattern/target/
+
+#objects
+objects/.idea/
+objects/target/
+objects/**/.idea/
+objects/**/target/
