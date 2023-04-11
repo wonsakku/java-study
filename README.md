@@ -7,3 +7,7 @@
 
 <br>
 
+## 2. [프로그래밍 초식(최범균)](https://www.youtube.com/watch?v=kRdML08R2Yo&list=PLwouWTPuIjUg0dmHoxgqNXyx3Acy7BNCz)
+* ### branch - programming-basic-cbk
+
+
