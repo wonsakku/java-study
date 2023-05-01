@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    .btn-container{
+        margin-top: 50px;
+        margin-left: 30px;
+    }
+    .status-btn{
+        margin-right: 10px;
+    }
+    .submit-btn{
+        margin-top: 30px;
+    }
+</style>
+
+<body>
+    <h2>observer</h2>
+
+    <div class="btn-container">
+        <div class="btn-group">
+            <button class="status-btn" id="common" value="COMMON">COMMON</button>
+            <button class="status-btn" id="warning" value="WARNING">WARNING</button>
+            <button class="status-btn" id="danger" value="DANGER">DANGER</button>
+        </div>
+        <div class="submit-btn">
+            <button id="submit">SUBMIT</button>
+        </div>
+    </div>
+</body>
+<script>
+
+    let selected = null;
+
+    window.onload = () => {
+        selectStatus();
+        submitEvent();
+    }
+
+    const selectStatus = () => {
+        const statusBtn = document.querySelectorAll(".status-btn");
+        statusBtn.forEach(btn => {
+            btn.addEventListener("click", function(){
+                selected = this.value;
+            });
+        });
+
+    }
+
+    const submitEvent = () => {
+        const submitBtn = document.querySelector("#submit");
+        submitBtn.addEventListener("click", function(){
+
+            if(selected === null){
+                alert("선택된 값이 없습니다.");
+                return ;
+            }
+
+            if(!confirm("제출하시겠습니까?")){
+                return ;
+            }
+
+            const url = "/observer/info?code=" + selected;
+
+            fetch(url)
+                .then(res => console.log("response : " + res));
+
+        });
+
+    }
+
+</script>
+
+
+</html>
+
+
+
